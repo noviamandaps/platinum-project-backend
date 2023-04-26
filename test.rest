@@ -1,0 +1,12 @@
+###
+GET  http://localhost:8000/v1/api/flight HTTP/1.1
+content-type: application/json
+
+###
+POST http://localhost:8000/v1/api/login
+Content-Type: application/json
+
+{
+    "email" : "admin@gmail.com",
+    "password" : "123456"
+} 

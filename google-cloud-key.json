@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "platinum-project-backend",
+  "private_key_id": "b248d024117eb5449d7f52fbd125ab956d1510df",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnw4kO1BrDSxhr\n11vBrao6t4kLbm+8i6yWkrakM/PVuuywoLTANbJ4iEjo+a7omf/nxzMtyq4LAJF7\nNtfdv3PFmabwCPtXuN8O/ce5dw5xOVY+n3sd5Gp2InzmWMVimuG1KcAfGSnkLYJ6\nkng9HBZcNBRVXaYdH/ga5weuiQBipN7qWF58LzXGon1wkJ5hThpUIRVUnwC+MoYb\nV1ezRO/X4ySgWTrgx4wHV9jK3loiXwWtNykw4MMPgCZLMQs+/pupWmFAz5C5hB+y\nF/QaDEm2fwm8wMkAdx2thyU130kT/PaYIux079cmtbiIEvxmJeoOZAup8rgMQ2VQ\nPEY8f6nfAgMBAAECggEASIcbgOKn81hK5YyEabYXyyy/vcZv3haQdcRV26VuPC+E\n1lOT8SkF0GAzDS2stXimjuCquphOKAmF27v5FTAI8BuedVWcu+772DJVH1ReVQrR\nw18VTfYLJKmCT99+7kNBYx36pjctyiz2pOEfxGOZMyF8zO8guqSwkYjh5E3scbha\n4A7aV+yCTQwnH8bLgKnSC6c1Kxf/eGTjD/jA/RbPQuW3pcv+dAW8yCbVU2Z1GIms\n2L7z7vDGz5yj3UT8O2IYa/f/fWvI68MXB/VblPeWEI0WFpapbnkchq/QfVPWYyC/\nXEFpd957TkP4VYipavtp32lavH+VWc28HpcTfZDKAQKBgQDq+uniHRQT7TiD3bXR\nts5XdlJza22DwKUp/LIN+NOKJ0WdqhbVCTrREFw1eG5GMuZoAqUoP+Nq5X42RgQS\nYmMo0QODyCpuCkp5wPAN0UAA6Zp/5S16c9mYCyZQlXZJwU7ZMn6m/xq6Blk0SZN8\neM/XRslvQmTeImQLNxqQEHn3AQKBgQC2xVsuvcoOOCey3P2qIOoC14HXmwbMx0zn\n/S4hJtesvzd8SVfWKTEfRtwAL43YVDV6uPvNVQXuJfJUQoATQDXkeUPZuhFisgIL\n1XMmiDvoTRFLRl6oSaPYx6Vs/UFFcnA3yhcdH6vdl32bmumDM30Umz9DACQcfe9P\nJPK+r8GA3wKBgQCdHHVC3SRuil8ONDB8btkaO5+3Um3f+O+12iKHGwb9yXJPj8lC\nWbB81o6Apew9fYz2oEYjWkxJTfaMfVX9oNEiGlZaR3yvJKxVKf6XjoBX29mUh/xX\ncpxbf6D3omd7uwdoS83JBKqvFM2SG1vEjtaQ3uCSRndA2we/Q/G7v3h9AQKBgGbv\nc9E5Voj3m3Qi/kJI00LSePAjAYtnW6r0bnyBUcqazvcSn4OgI2hIEjOQlMSXeJ8r\ne7VDA1oCyR4nbdZpvXB1037WSmBZfMmJZ5b19zd34BuTAFCrWLoIhuSBJbelIgpp\nqObgJX1hin6OmqEn6HQok1J6y9u4GYVre8NlXQflAoGBALTwyndU2+TrvWqGITAE\nkKBwj/vpao7hVjGTDMlr2Hs3KCi2FTbAxMOQEmdOnX4womGG1bIywyiSt8JeLYVP\nd6ubFiAqNvO6TlMDOSIZGmhxh9z4/J5bJiwd/ngaU9P3NrqSlBxioy5u99bzr1o4\nAGdYgotRW4jCFIgwUrUENSqL\n-----END PRIVATE KEY-----\n",
+  "client_email": "admin-846@platinum-project-backend.iam.gserviceaccount.com",
+  "client_id": "115986350225483606470",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/admin-846%40platinum-project-backend.iam.gserviceaccount.com"
+}
+

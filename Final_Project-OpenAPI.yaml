@@ -1,0 +1,2560 @@
+openapi: 3.0.0
+info:
+  title: FINAL PROJECT
+  contact: {}
+  version: "1.0"
+servers:
+  - url: http://localhost:8000/v1/api
+    variables: {}
+  - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api
+    variables: {}
+paths:
+  /login:
+    post:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: LOGIN
+      operationId: LOGIN
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/LOGINREQUEST"
+                - example:
+                    email: admin@gmail.com
+                    password: "123456"
+            example:
+              email: admin@gmail.com
+              password: "123456"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /register:
+    post:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: REGISTER USER
+      operationId: REGISTERUSER
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/REGISTERUSERREQUEST"
+                - example:
+                    email: dewabiara2@gmail.com
+                    firstname: dewa
+                    lastname: biara
+                    gender: L
+                    phone: 81239718505
+                    birthdate: 2002-07-17
+                    password: "123456"
+                    confPassword: "123456"
+                    homeAddress: Ubud
+                    country: indonesia
+                    province: Bali
+                    city: Gianyar
+            example:
+              email: dewabiara2@gmail.com
+              firstname: dewa
+              lastname: biara
+              gender: L
+              phone: 81239718505
+              birthdate: 2002-07-17
+              password: "123456"
+              confPassword: "123456"
+              homeAddress: Ubud
+              country: indonesia
+              province: Bali
+              city: Gianyar
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /logout:
+    delete:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: LOGOUT
+      operationId: LOGOUT
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /whoami:
+    get:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: WHOAMI
+      operationId: WHOAMI
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/myprofile:
+    get:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: GET PROFILE
+      operationId: GETPROFILE
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /upload:
+    post:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: UPLOAD IMAGE
+      operationId: UPLOADIMAGE
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+        required: false
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/profile:
+    put:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: UPDATE USER
+      operationId: UPDATEUSER
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/UPDATEUSERREQUEST"
+                - example:
+                    email: dewabiara1@gmail.com
+                    firstname: dewa
+                    lastname: biara
+                    gender: L
+                    phone: 81239718507
+                    birthdate: 2002-07-19
+                    pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+                    homeAddress: Ubud
+                    country: Indonesia
+                    province: Bali
+                    city: Denpasar
+            example:
+              email: dewabiara1@gmail.com
+              firstname: dewa
+              lastname: biara
+              gender: L
+              phone: 81239718507
+              birthdate: 2002-07-19
+              pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+              homeAddress: Ubud
+              country: Indonesia
+              province: Bali
+              city: Denpasar
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/profile/password/:
+    put:
+      tags:
+        - ENDPOINT FOR USERS
+      summary: UPDATE USER1
+      operationId: UPDATEUSER1
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/UPDATEUSERREQUEST1"
+                - example:
+                    oldPassword: 123456
+                    newPassword: saya123
+                    confPassword: saya123
+            example:
+              oldPassword: 123456
+              newPassword: saya123
+              confPassword: saya123
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /airports:
+    get:
+      tags:
+        - AIRPORT FOR USERS
+      summary: GET AIRPORT ALL
+      operationId: GETAIRPORTALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+    post:
+      tags:
+        - CRUD AIRPORT
+      summary: CREATE AIRPORT
+      operationId: CREATEAIRPORT
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CREATEAIRPORTREQUEST"
+                - example:
+                    name: El Mellah Airport
+                    code: AAE
+                    city: El Tarf
+                    country: Algeria
+                    terminal: Annaba
+                    status: true
+            example:
+              name: El Mellah Airport
+              code: AAE
+              city: El Tarf
+              country: Algeria
+              terminal: Annaba
+              status: true
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /airports/{search}:
+    get:
+      tags:
+        - AIRPORT FOR USERS
+      summary: GET AIRPORT by Search Name
+      operationId: GETAIRPORTbySearchName
+      parameters:
+        - name: search
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /airports/byid/{id}:
+    get:
+      tags:
+        - AIRPORT FOR USERS
+      summary: GET AIRPORT by ID
+      operationId: GETAIRPORTbyID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /airports/delete/{id}:
+    delete:
+      tags:
+        - CRUD AIRPORT
+      summary: DELETE AIRPORT BY ID
+      operationId: DELETEAIRPORTBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /airports/edit/{id}:
+    put:
+      tags:
+        - CRUD AIRPORT
+      summary: EDIT AIRPORT BY ID1
+      operationId: EDITAIRPORTBYID1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/EDITAIRPORTBYIDREQUEST"
+                - example:
+                    name: Yogyakarta International Airport
+                    code: YIA
+                    city: Yogyakarta
+                    country: Indonesia
+                    terminal: Terminal AA
+            example:
+              name: Yogyakarta International Airport
+              code: YIA
+              city: Yogyakarta
+              country: Indonesia
+              terminal: Terminal AA
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /tickets:
+    get:
+      tags:
+        - TICKET FOR USERS
+      summary: GET TICKET ALL
+      operationId: GETTICKETALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /tickets/search:
+    get:
+      tags:
+        - TICKET FOR USERS
+      summary: GET TICKET SEARCH QUERY
+      operationId: GETTICKETSEARCHQUERY
+      parameters:
+        - name: departure
+          in: query
+          description: ""
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: AAM
+        - name: arrival
+          in: query
+          description: ""
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: AAL
+        - name: datedeparture
+          in: query
+          description: ""
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: 2022-09-30
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /tickets/{id}:
+    get:
+      tags:
+        - TICKET FOR USERS
+      summary: GET TICKET BY ID
+      operationId: GETTICKETBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /booking:
+    post:
+      tags:
+        - BOOKING FOR USERS
+      summary: CREATE BOOKING TICKET
+      operationId: CREATEBOOKINGTICKET
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CREATEBOOKINGTICKETREQUEST"
+                - example:
+                    ticket:
+                      ticket_id_departure: 5
+                      ticket_id_return: 6
+                      totalPrice: 20000000
+                    passanger:
+                      - firstname: dummy
+                        lastname: dummy
+                        email: biara@gmail.com
+                        age: 20
+                        identityType: KTP
+                        identityNumber: "123124123124"
+                      - firstname: dummy
+                        lastname: dummy
+                        email: hendri@gmail.com
+                        age: 23
+                        identityType: KTP
+                        identityNumber: "123124123124"
+            example:
+              ticket:
+                ticket_id_departure: 5
+                ticket_id_return: 6
+                totalPrice: 20000000
+              passanger:
+                - firstname: dummy
+                  lastname: dummy
+                  email: biara@gmail.com
+                  age: 20
+                  identityType: KTP
+                  identityNumber: "123124123124"
+                - firstname: dummy
+                  lastname: dummy
+                  email: hendri@gmail.com
+                  age: 23
+                  identityType: KTP
+                  identityNumber: "123124123124"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wishlists:
+    get:
+      tags:
+        - WISHLIST FOR USERS
+      summary: GET WISHLIST BY ID JWT
+      operationId: GETWISHLISTBYIDJWT
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wishlists/{id}:
+    get:
+      tags:
+        - WISHLIST FOR USERS
+      summary: GET WISHLIST BY ID
+      operationId: GETWISHLISTBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wishlists/create:
+    post:
+      tags:
+        - WISHLIST FOR USERS
+      summary: CREATE WISHLIST
+      operationId: CREATEWISHLIST
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CREATEWISHLISTREQUEST"
+                - example:
+                    ticket_id_departure: 1
+                    ticket_id_return: 2
+            example:
+              ticket_id_departure: 1
+              ticket_id_return: 2
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wishlists/delete/{id}:
+    delete:
+      tags:
+        - WISHLIST FOR USERS
+      summary: DELETE WISHLIST
+      operationId: DELETEWISHLIST
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /payments:
+    get:
+      tags:
+        - PAYMENT FOR USERS
+      summary: GET PAYMENT BY JWT
+      operationId: GETPAYMENTBYJWT
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /payments/all:
+    get:
+      tags:
+        - PAYMENT FOR USERS
+      summary: GET PAYMENT BY JWT PAYMENT FALSE
+      operationId: GETPAYMENTBYJWTPAYMENTFALSE
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /booking/payment/{id}:
+    post:
+      tags:
+        - PAYMENT FOR USERS
+      summary: PAYMENT BOOKING BUY TICKET
+      operationId: PAYMENTBOOKINGBUYTICKET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /cancel/payment/{id}:
+    post:
+      tags:
+        - PAYMENT FOR USERS
+      summary: CANCEL PAYMENT BOOKING
+      operationId: CANCELPAYMENTBOOKING
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wallet:
+    get:
+      tags:
+        - WALLET FOR USERS
+      summary: GET SALDO BY JWT ID
+      operationId: GETSALDOBYJWTID
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /history/{condition}:
+    get:
+      tags:
+        - HISTORY FOR USERS
+      summary: GET HISTORY (TRUE/FALSE) BY JWT
+      operationId: GETHISTORY(TRUE/FALSE)BYJWT
+      parameters:
+        - name: condition
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /history/byid/{id}:
+    get:
+      tags:
+        - HISTORY FOR USERS
+      summary: GET HISTORY (PAYMENT/NOT) BY JWT Copy
+      operationId: GETHISTORY(PAYMENT/NOT)BYJWTCopy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /history/delete/{id}:
+    delete:
+      tags:
+        - HISTORY FOR USERS
+      summary: DELETE HISTORY BY ID
+      operationId: DELETEHISTORYBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /notif/all:
+    get:
+      tags:
+        - NOTIFICATION FOR USERS AND ADMIN
+      summary: GET NOTIF IS READ FALSE BY JWT
+      operationId: GETNOTIFISREADFALSEBYJWT
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /notif/all/{id}:
+    get:
+      tags:
+        - NOTIFICATION FOR USERS AND ADMIN
+      summary: GET NOTIF IS READ TRUE/FALSE BY JWT WITH PARAMS ID
+      operationId: GETNOTIFISREADTRUEBYJWT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /notif/read:
+    put:
+      tags:
+        - NOTIFICATION FOR USERS AND ADMIN
+      summary: READ NOTIF BY JWT
+      operationId: READNOTIFBYJWT
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+    post:
+      tags:
+        - NOTIFICATION FOR USERS AND ADMIN
+      summary: READ NOTIF BY JWT POST METHOD
+      operationId: READNOTIFBYJWTPOSTMETHOD
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /notif/delete/{id}:
+    delete:
+      tags:
+        - NOTIFICATION FOR USERS AND ADMIN
+      summary: DELETE
+      operationId: DELETE
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/{id}:
+    get:
+      tags:
+        - CRUD USERS
+      summary: GET USER BY ID
+      operationId: GETUSERBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users:
+    get:
+      tags:
+        - CRUD USERS
+      summary: GET USER ALL
+      operationId: GETUSERALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/profile/{search}:
+    get:
+      tags:
+        - CRUD USERS
+      summary: SEARCH USER
+      operationId: SEARCHUSER
+      parameters:
+        - name: search
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/delete/{id}:
+    delete:
+      tags:
+        - CRUD USERS
+      summary: DELETE USERS BY ID
+      operationId: DELETEUSERSBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /users/edit/{id}:
+    put:
+      tags:
+        - CRUD USERS
+      summary: EDIT USERS BY ID
+      operationId: EDITUSERSBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/EDITUSERSBYIDREQUEST"
+                - example:
+                    email: dewabiara2@gmail.com
+                    firstname: dewa
+                    lastname: biara
+                    gender: L
+                    phone: 81239718505
+                    birthdate: 2002-07-17
+                    pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+                    homeAddress: Ubud
+                    country: indonesia
+                    province: Bali
+                    city: Gianyar
+            example:
+              email: dewabiara2@gmail.com
+              firstname: dewa
+              lastname: biara
+              gender: L
+              phone: 81239718505
+              birthdate: 2002-07-17
+              pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+              homeAddress: Ubud
+              country: indonesia
+              province: Bali
+              city: Gianyar
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /passanger:
+    get:
+      tags:
+        - CRUD PASSANGER
+      summary: GET PASSANGER ALL
+      operationId: GETPASSANGERALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /passanger/edit/{id}:
+    put:
+      tags:
+        - CRUD PASSANGER
+      summary: EDIT PASSANGER
+      operationId: EDITPASSANGER
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/EDITPASSANGERREQUEST"
+                - example:
+                    firstname: Dewa
+                    lastname: Biara
+                    email: biara@gmail.com
+                    age: 20
+                    identityType: KTP
+                    identityNumber: "123124123124"
+            example:
+              firstname: Dewa
+              lastname: Biara
+              email: biara@gmail.com
+              age: 20
+              identityType: KTP
+              identityNumber: "123124123124"
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /passanger/delete/{id}:
+    delete:
+      tags:
+        - CRUD PASSANGER
+      summary: DELETE PASSANGER
+      operationId: DELETEPASSANGER
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight:
+    get:
+      tags:
+        - CRUD FLIGHT
+      summary: GET FLIGHT ALL
+      operationId: GETFLIGHTALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight/{search}:
+    get:
+      tags:
+        - CRUD FLIGHT
+      summary: GET FLIGHT BY SEARCH
+      operationId: GETFLIGHTBYSEARCH
+      parameters:
+        - name: search
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight/byid/{id}:
+    get:
+      tags:
+        - CRUD FLIGHT
+      summary: GET FLIGHT BY ID
+      operationId: GETFLIGHTBYID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight/create:
+    post:
+      tags:
+        - CRUD FLIGHT
+      summary: CREATE FLIGHT
+      operationId: CREATEFLIGHT
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CREATEFLIGHTREQUEST"
+                - example:
+                    flight:
+                      departureAirport: 1
+                      arrivalAirport: 2
+                      departureDate: 2022-09-30
+                      arrivalDate: 2022-10-02
+                      departureTime: 23:05:59
+                      arrivalTime: 07:09:20
+                      flightType: 1
+                      planeId: 1
+                    ticket:
+                      class_id: 1
+                      price: 1231412
+                      country: Indonesia
+            example:
+              flight:
+                departureAirport: 1
+                arrivalAirport: 2
+                departureDate: 2022-09-30
+                arrivalDate: 2022-10-02
+                departureTime: 23:05:59
+                arrivalTime: 07:09:20
+                flightType: 1
+                planeId: 1
+              ticket:
+                class_id: 1
+                price: 1231412
+                country: Indonesia
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight/edit/{id}:
+    put:
+      tags:
+        - CRUD FLIGHT
+      summary: EDIT FLIGHT
+      operationId: EDITFLIGHT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/EDITFLIGHTREQUEST"
+                - example:
+                    flight:
+                      departureAirport: 1
+                      arrivalAirport: 2
+                      departureDate: 2022-09-30
+                      arrivalDate: 2022-10-02
+                      departureTime: 23:05:59
+                      arrivalTime: 07:09:20
+                      flightType: 1
+                      planeId: 3
+                    ticket:
+                      class_id: 1
+                      price: 11111111
+                      country: test
+            example:
+              flight:
+                departureAirport: 1
+                arrivalAirport: 2
+                departureDate: 2022-09-30
+                arrivalDate: 2022-10-02
+                departureTime: 23:05:59
+                arrivalTime: 07:09:20
+                flightType: 1
+                planeId: 3
+              ticket:
+                class_id: 1
+                price: 11111111
+                country: test
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /flight/delete/{id}:
+    delete:
+      tags:
+        - CRUD FLIGHT
+      summary: DELETE FLIGHT
+      operationId: DELETEFLIGHT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /userbookings:
+    get:
+      tags:
+        - CRUD BOOKING
+      summary: GET USER BOOKING ALL
+      operationId: GETUSERBOOKINGALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wallet/all:
+    get:
+      tags:
+        - CRUD WALLET
+      summary: GET WALLET ALL
+      operationId: GETWALLETALL
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wallet/create:
+    post:
+      tags:
+        - CRUD WALLET
+      summary: CREATE WALLET
+      operationId: CREATEWALLET
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/CREATEWALLETREQUEST"
+                - example:
+                    user_id: 3
+                    balance: 6000000
+            example:
+              user_id: 3
+              balance: 6000000
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+    delete:
+      tags:
+        - CRUD WALLET
+      summary: DELETE WALLET
+      operationId: DeleteDELETEWALLET
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wallet/edit/{id}:
+    put:
+      tags:
+        - CRUD WALLET
+      summary: UPDATE WALLET
+      operationId: UPDATEWALLET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/UPDATEWALLETREQUEST"
+                - example:
+                    balance: 10000
+            example:
+              balance: 10000
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wallet/delete/{id}:
+    delete:
+      tags:
+        - CRUD WALLET
+      summary: DELETE WALLET
+      operationId: DELETEWALLET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /payments/all/{id}:
+    get:
+      tags:
+        - CRUD BOOKING
+      summary: GET PAYMENT ALL (PAYED/FALSE)
+      operationId: GETPAYMENTALL(PAYED/FALSE)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+  /wishlists/delete/3:
+    delete:
+      tags:
+        - WISHLIST FOR USERS
+      summary: DELETE WISHLIST
+      operationId: DeleteDELETEWISHLIST
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+      servers:
+        - url: https://final-Project-FSW1-AND1.up.railway.app/v1/api/
+          variables: {}
+components:
+  schemas:
+    LOGINREQUEST:
+      title: LOGINREQUEST
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: admin@gmail.com
+        password: "123456"
+    REGISTERUSERREQUEST:
+      title: REGISTERUSERREQUEST
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - password
+        - confPassword
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        password:
+          type: string
+        confPassword:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara2@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        password: "123456"
+        confPassword: "123456"
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    UPDATEUSERREQUEST:
+      title: UPDATEUSERREQUEST
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara1@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718507
+        birthdate: 2002-07-19
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: Indonesia
+        province: Bali
+        city: Denpasar
+    UPDATEPASSWORDREQUEST:
+      title: UPDATEPASSWORDREQUEST
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara1@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718507
+        birthdate: 2002-07-19
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: Indonesia
+        province: Bali
+        city: Denpasar
+    CREATEBOOKINGTICKETREQUEST:
+      title: CREATEBOOKINGTICKETREQUEST
+      required:
+        - ticket
+        - passanger
+      type: object
+      properties:
+        ticket:
+          $ref: "#/components/schemas/Ticket"
+        passanger:
+          type: array
+          items:
+            $ref: "#/components/schemas/Passanger"
+          description: ""
+      example:
+        ticket:
+          ticket_id_departure: 5
+          ticket_id_return: 6
+          totalPrice: 20000000
+        passanger:
+          - firstname: dummy
+            lastname: dummy
+            email: biara@gmail.com
+            age: 20
+            identityType: KTP
+            identityNumber: "123124123124"
+          - firstname: dummy
+            lastname: dummy
+            email: hendri@gmail.com
+            age: 23
+            identityType: KTP
+            identityNumber: "123124123124"
+    Ticket:
+      title: Ticket
+      required:
+        - ticket_id_departure
+        - ticket_id_return
+        - totalPrice
+      type: object
+      properties:
+        ticket_id_departure:
+          type: integer
+          format: int32
+        ticket_id_return:
+          type: integer
+          format: int32
+        totalPrice:
+          type: integer
+          format: int32
+      example:
+        ticket_id_departure: 5
+        ticket_id_return: 6
+        totalPrice: 20000000
+    Passanger:
+      title: Passanger
+      required:
+        - firstname
+        - lastname
+        - email
+        - age
+        - identityType
+        - identityNumber
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        age:
+          type: integer
+          format: int32
+        identityType:
+          type: string
+        identityNumber:
+          type: string
+      example:
+        firstname: dummy
+        lastname: dummy
+        email: biara@gmail.com
+        age: 20
+        identityType: KTP
+        identityNumber: "123124123124"
+    CREATEWISHLISTREQUEST:
+      title: CREATEWISHLISTREQUEST
+      required:
+        - ticket_id_departure
+        - ticket_id_return
+      type: object
+      properties:
+        ticket_id_departure:
+          type: integer
+          format: int32
+        ticket_id_return:
+          type: integer
+          format: int32
+      example:
+        ticket_id_departure: 1
+        ticket_id_return: 2
+    DELETEWISHLISTREQUEST:
+      title: DELETEWISHLISTREQUEST
+      required:
+        - ticket_id_departure
+        - ticket_id_return
+      type: object
+      properties:
+        ticket_id_departure:
+          type: integer
+          format: int32
+        ticket_id_return:
+          type: integer
+          format: int32
+      example:
+        ticket_id_departure: 1
+        ticket_id_return: 2
+    EDITUSERSBYIDREQUEST:
+      title: EDITUSERSBYIDREQUEST
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara2@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    REGISTERUSERFROMADMINREQUEST:
+      title: REGISTERUSERFROMADMINREQUEST
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - password
+        - confPassword
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        password:
+          type: string
+        confPassword:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara2@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        password: "123456"
+        confPassword: "123456"
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    EDITAIRPORTBYIDREQUEST:
+      title: EDITAIRPORTBYIDREQUEST
+      required:
+        - name
+        - code
+        - city
+        - country
+        - terminal
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        terminal:
+          type: string
+      example:
+        name: Simela Update
+        code: SMU
+        city: Medan
+        country: Indonesia
+        terminal: Simela Update
+    CREATEAIRPORTREQUEST:
+      title: CREATEAIRPORTREQUEST
+      required:
+        - name
+        - code
+        - city
+        - country
+        - terminal
+        - status
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        terminal:
+          type: string
+        status:
+          type: boolean
+      example:
+        name: El Mellah Airport
+        code: AAE
+        city: El Tarf
+        country: Algeria
+        terminal: Annaba
+        status: true
+    EDITPASSANGERREQUEST:
+      title: EDITPASSANGERREQUEST
+      required:
+        - firstname
+        - lastname
+        - email
+        - age
+        - identityType
+        - identityNumber
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        age:
+          type: integer
+          format: int32
+        identityType:
+          type: string
+        identityNumber:
+          type: string
+      example:
+        firstname: Dewa
+        lastname: Biara
+        email: biara@gmail.com
+        age: 20
+        identityType: KTP
+        identityNumber: "123124123124"
+    DELETEPASSANGERREQUEST:
+      title: DELETEPASSANGERREQUEST
+      required:
+        - firstname
+        - lastname
+        - email
+        - age
+        - identityType
+        - identityNumber
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        age:
+          type: integer
+          format: int32
+        identityType:
+          type: string
+        identityNumber:
+          type: string
+      example:
+        firstname: Dewa
+        lastname: Biara
+        email: biara@gmail.com
+        age: 20
+        identityType: KTP
+        identityNumber: "123124123124"
+    CREATEFLIGHTREQUEST:
+      title: CREATEFLIGHTREQUEST
+      required:
+        - flight
+        - ticket
+      type: object
+      properties:
+        flight:
+          $ref: "#/components/schemas/Flight"
+        ticket:
+          $ref: "#/components/schemas/Ticket1"
+      example:
+        flight:
+          departureAirport: 1
+          arrivalAirport: 2
+          departureDate: 2022-09-30
+          arrivalDate: 2022-10-02
+          departureTime: 23:05:59
+          arrivalTime: 07:09:20
+          flightType: 1
+          planeId: 1
+        ticket:
+          class_id: 1
+          price: 1231412
+          country: Indonesia
+    Flight:
+      title: Flight
+      required:
+        - departureAirport
+        - arrivalAirport
+        - departureDate
+        - arrivalDate
+        - departureTime
+        - arrivalTime
+        - flightType
+        - planeId
+      type: object
+      properties:
+        departureAirport:
+          type: integer
+          format: int32
+        arrivalAirport:
+          type: integer
+          format: int32
+        departureDate:
+          type: string
+        arrivalDate:
+          type: string
+        departureTime:
+          type: string
+        arrivalTime:
+          type: string
+        flightType:
+          type: integer
+          format: int32
+        planeId:
+          type: integer
+          format: int32
+      example:
+        departureAirport: 1
+        arrivalAirport: 2
+        departureDate: 2022-09-30
+        arrivalDate: 2022-10-02
+        departureTime: 23:05:59
+        arrivalTime: 07:09:20
+        flightType: 1
+        planeId: 1
+    Ticket1:
+      title: Ticket1
+      required:
+        - class_id
+        - price
+        - country
+      type: object
+      properties:
+        class_id:
+          type: integer
+          format: int32
+        price:
+          type: integer
+          format: int32
+        country:
+          type: string
+      example:
+        class_id: 1
+        price: 1231412
+        country: Indonesia
+    EDITFLIGHTREQUEST:
+      title: EDITFLIGHTREQUEST
+      required:
+        - flight
+        - ticket
+      type: object
+      properties:
+        flight:
+          $ref: "#/components/schemas/Flight"
+        ticket:
+          $ref: "#/components/schemas/Ticket1"
+      example:
+        flight:
+          departureAirport: 1
+          arrivalAirport: 2
+          departureDate: 2022-09-30
+          arrivalDate: 2022-10-02
+          departureTime: 23:05:59
+          arrivalTime: 07:09:20
+          flightType: 1
+          planeId: 3
+        ticket:
+          class_id: 1
+          price: 11111111
+          country: test
+    DELETEFLIGHTREQUEST:
+      title: DELETEFLIGHTREQUEST
+      required:
+        - flight
+        - ticket
+      type: object
+      properties:
+        flight:
+          $ref: "#/components/schemas/Flight"
+        ticket:
+          $ref: "#/components/schemas/Ticket1"
+      example:
+        flight:
+          departureAirport: 1
+          arrivalAirport: 2
+          departureDate: 2022-09-30
+          arrivalDate: 2022-10-02
+          departureTime: 23:05:59
+          arrivalTime: 07:09:20
+          flightType: 1
+          planeId: 1
+        ticket:
+          class_id: 1
+          price: 1231412
+          country: Indonesia
+    CREATEWALLETREQUEST:
+      title: CREATEWALLETREQUEST
+      required:
+        - user_id
+        - balance
+      type: object
+      properties:
+        user_id:
+          type: integer
+          format: int32
+        balance:
+          type: integer
+          format: int32
+      example:
+        user_id: 3
+        balance: 6000000
+    UPDATEWALLETREQUEST:
+      title: UPDATEWALLETREQUEST
+      required:
+        - balance
+      type: object
+      properties:
+        balance:
+          type: integer
+          format: int32
+      example:
+        balance: 10000
+    UPDATEUSERREQUEST1:
+      title: UPDATEUSERREQUEST1
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - password
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        password:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        password: "123456"
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    UPDATEPASSWORDCopyRequest:
+      title: UPDATEPASSWORDCopyRequest
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara1@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718507
+        birthdate: 2002-07-19
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: Indonesia
+        province: Bali
+        city: Denpasar
+    LOGINCopyRequest:
+      title: LOGINCopyRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: admin@gmail.com
+        password: "123456"
+    REGISTERUSERCopyRequest:
+      title: REGISTERUSERCopyRequest
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - password
+        - confPassword
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        password:
+          type: string
+        confPassword:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: lucia@gmail.com
+        firstname: lucia
+        lastname: alecia
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        password: lucia
+        confPassword: lucia
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    UPDATEUSERCopyRequest:
+      title: UPDATEUSERCopyRequest
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara1@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718507
+        birthdate: 2002-07-19
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: Indonesia
+        province: Bali
+        city: Denpasar
+    UPDATEPASSWORDCopyRequest1:
+      title: UPDATEPASSWORDCopyRequest1
+      required:
+        - oldPassword
+        - newPassword
+        - confPassword
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+        confPassword:
+          type: string
+      example:
+        oldPassword: "123457"
+        newPassword: "123456"
+        confPassword: "123456"
+    CREATEWISHLISTREQUEST1:
+      title: CREATEWISHLISTREQUEST1
+      required:
+        - ticket_id_departure
+      type: object
+      properties:
+        ticket_id_departure:
+          type: integer
+          format: int32
+      example:
+        ticket_id_departure: 1
+    EDITUSERSBYIDCopyRequest:
+      title: EDITUSERSBYIDCopyRequest
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - pictures
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        pictures:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dummyedit@gmail.com
+        firstname: dummyedit
+        lastname: dummyedit
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        pictures: https://storage.googleapis.com/platinum-project-backend.appspot.com/Narukami%20Island%20Grand%20Narukami%20Shrine-1.jpg
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    REGISTERUSERFROMADMINCopy2Request:
+      title: REGISTERUSERFROMADMINCopy2Request
+      required:
+        - email
+        - firstname
+        - lastname
+        - gender
+        - phone
+        - birthdate
+        - password
+        - confPassword
+        - homeAddress
+        - country
+        - province
+        - city
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        gender:
+          type: string
+        phone:
+          type: integer
+          format: int64
+        birthdate:
+          type: string
+        password:
+          type: string
+        confPassword:
+          type: string
+        homeAddress:
+          type: string
+        country:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+      example:
+        email: dewabiara2@gmail.com
+        firstname: dewa
+        lastname: biara
+        gender: L
+        phone: 81239718505
+        birthdate: 2002-07-17
+        password: "123456"
+        confPassword: "123456"
+        homeAddress: Ubud
+        country: indonesia
+        province: Bali
+        city: Gianyar
+    CREATEAIRPORTREQUEST1:
+      title: CREATEAIRPORTREQUEST1
+      required:
+        - name
+        - code
+        - city
+        - country
+        - terminal
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        terminal:
+          type: string
+      example:
+        name: Yogyakarta International Airport
+        code: YIA
+        city: Yogyakarta
+        country: Indonesia
+        terminal: Terminal AA
+    DELETEWALLETREQUEST:
+      title: DELETEWALLETREQUEST
+      required:
+        - user_id
+        - balance
+      type: object
+      properties:
+        user_id:
+          type: integer
+          format: int32
+        balance:
+          type: integer
+          format: int32
+      example:
+        user_id: 1
+        balance: 123123123
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: ENDPOINT FOR USERS
+  - name: AIRPORT FOR USERS
+  - name: TICKET FOR USERS
+  - name: BOOKING FOR USERS
+  - name: WISHLIST FOR USERS
+  - name: PAYMENT FOR USERS
+  - name: WALLET FOR USERS
+  - name: HISTORY FOR USERS
+  - name: NOTIFICATION FOR USERS AND ADMIN
+  - name: CRUD USERS
+  - name: CRUD AIRPORT
+  - name: CRUD PASSANGER
+  - name: CRUD FLIGHT
+  - name: CRUD WALLET
+  - name: CRUD BOOKING
